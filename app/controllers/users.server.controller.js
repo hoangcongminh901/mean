@@ -98,7 +98,7 @@ exports.read = function (req, res) {
 
 exports.userByID = function (req, res, next, id) {
   User.findOne({
-    _id: id
+    _id: req.params.id
   }, function (err, user) {
     if (err) {
       return next(err);
